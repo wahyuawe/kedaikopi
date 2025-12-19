@@ -2,20 +2,25 @@
   --primary: #b6895b;
   --bg: #010101;
 }
+
 * {
   margin: 0;
   padding: 0;
   text-decoration: none;
-  box-sizing: border-box;
-  outline: none;
+    box-sizing: border-box;
+    outline: none;
   border: none;
 }
+
+html{
+  scroll-behavior: smooth;
+}
+
 
 body {
   font-family: "Quicksand", sans-serif;
   background-color: var(--bg);
   color: #fff;
-  min-height: 2820px;
 }
 
 /* Navbar */
@@ -36,7 +41,7 @@ body {
 .navbar .navbar-logo {
   font-size: 2.3rem;
   font-style: italic;
-  font-weight: 700;
+  font-weight: 700px;
   color: #fff;
 }
 
@@ -222,9 +227,16 @@ body {
   line-height: 1.5rem;
 }
 
+.about .row .content p span{
+  color: var(--bg);
+  font-style: italic;
+  font-size: 1.6rem;
+}
+
 /* menu secton */
 .menu {
   position: relative;
+  width: 100%;
 }
 
 .menu::before {
@@ -249,10 +261,10 @@ body {
 
 .menu p {
   text-align: center;
-  max-width: 30rem;
+  max-width: 45rem;
   margin: auto;
   line-height: 1.5rem;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 .menu .row {
@@ -275,13 +287,12 @@ body {
 .menu .row .card .card-name {
   margin: 1rem auto 0.2rem;
   font-size: 1.5rem;
-  color: var(--primary);
+  color: burlywood;
 }
 
 /* contact section */
 .contact {
   width: 100%;
-  height: 100vh;
   background-color: var(--primary);
   position: relative;
 }
@@ -308,6 +319,93 @@ body {
   margin: auto;
   line-height: 1.5rem;
 }
+
+.contact .row {
+  display: flex;
+  margin-top: 2rem;
+  background-color: #222;
+}
+
+.contact .row .map{
+  flex: 1 1 45rem;
+  width: 100%;
+  object-fit: cover;
+}
+
+.contact .row form{
+  flex: 1 1 45rem;
+  padding: 5rem 2;
+  text-align: center;
+}
+
+.contact .row form .input-grup{
+  display: flex;
+  margin: 2rem;
+  align-items: center;
+  background-color: var(--bg);
+  border: 1px solid #eee;
+  padding-left: 2rem;
+}
+
+.contact .row form .input-grup input{
+  width: 100%;
+  padding: 2rem;
+  font-size: 1.7rem;
+  background: none;
+  color: #eee;
+}
+
+.contact .row form .button{
+  font-size: 1.8rem;
+  padding: 1rem 3rem;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  color: #fff;
+  background-color: #b6895b;
+  cursor: pointer;
+}
+
+.contact .row form .button:hover{
+  color: var(--bg);
+}
+
+footer {
+  padding: 2rem 0 2rem;
+  text-align: center;
+}
+
+footer .socials ,
+footer .links{
+  margin-bottom: 1rem;
+}
+
+footer .socials a{
+  color: #fff;
+  padding: 0 1rem ;
+}
+
+footer .links a{
+ padding: 0 2rem;
+ font-size: 1rem;
+ color: #fff;
+ font-weight: 700
+}
+
+footer .socials a:hover,
+footer .links a:hover,
+footer .credit a:hover{
+  color: var(--primary);
+}
+
+footer .credit p a{
+  font-size: 0.8rem;
+}
+
+footer .credit p a{
+  font-size: 1rem;
+  color: #cfb397;
+}
+
 
 /* media queries */
 /* leptop */
@@ -376,8 +474,19 @@ body {
   .menu .row .card img {
     width: 150px;
   }
+
+  .contact .row{
+  flex-wrap: wrap;
+  }
+
+  .contact .row .map{
+    height: 25rem;
 }
 
+  .contact .row form .input-grup{
+    margin-top: 0;
+  }
+}
 /* phone */
 @media (max-width: 500px) {
   html {
@@ -392,16 +501,20 @@ body {
     height: 16px;
   }
 
+  .hero .content {
+    margin-bottom: 40% ;
+  }
+
   .hero .content h1 {
-    font-size: 4rem;
+    font-size: 4.5rem;
   }
 
   .hero .content p {
-    font-size: 1rem;
+    font-size: 1.3rem;
   }
 
   .hero .content .cta {
-    font-size: 1.2rem;
+    font-size: 1.7rem;
   }
 
   .about .row .content h3 {
@@ -412,8 +525,15 @@ body {
     font-size: 2.3rem;
   }
 
-  .menu .row .card img {
-    width: 100px;
+  .about .row .content p{
+    font-size: 1.4rem;
   }
-}
 
+  .menu .row .card img {
+    width: 90px;
+  }
+
+  /* .menu .row .card img {
+    width: 90px;
+  } */
+}
